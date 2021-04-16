@@ -76,4 +76,7 @@ typings/
 .fusebox/
 
 # Ignore composer
-vendor/
+/vendor
+
+#Ignore compiled script
+/dist
