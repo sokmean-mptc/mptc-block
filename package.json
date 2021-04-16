@@ -1,0 +1,16 @@
+{
+  "name": "mptc-block",
+  "version": "0.0.1",
+  "description": "A WordPress Gutenberg plugin",
+  "main": "index.js",
+  "scripts": {
+    "start": "cgb-scripts start",
+    "build": "cgb-scripts build"
+  },
+  "author": "sokmean-mptc",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "cgb-scripts": "^1.23.1"
+  }
+}
