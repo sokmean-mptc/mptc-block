@@ -39,7 +39,7 @@ class BaseController
     }
 
     public function getPostView() {
-        return '<i class="icofont-eye-alt"></i> ' . $this->formatKMG( get_post_meta( get_the_ID(), $this->meta_key_view_count, true ) );
+        return '<i class="icofont-eye-alt"></i> ' . $this->formatKMG( get_post_meta( get_the_ID(), $this->metaKeyPostViewCount( 'meta_value_num' ), true ) );
     }
 
     public function getAuthorPostsUrl() {

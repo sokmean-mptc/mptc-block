@@ -1,0 +1,65 @@
+# Copyright (C) 2021 MPTC Block
+# This file is distributed under the same license as the MPTC Block package.
+msgid ""
+msgstr ""
+"Project-Id-Version: MPTC Block 0.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mptc-block\n"
+"POT-Creation-Date: 2021-05-21 18:28+0700\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2021-05-21 18:31+0700\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: km\n"
+
+#: inc/Base/BaseController.php:38
+msgid " ago"
+msgstr "មុន"
+
+#: inc/Base/BaseController.php:46
+msgid "by "
+msgstr "ដោយ "
+
+#: inc/Base/BaseController.php:84
+msgid "K"
+msgstr "ពាន់"
+
+#: inc/Base/BaseController.php:87
+msgid "M"
+msgstr "លាន"
+
+#: inc/Base/BaseController.php:90
+msgid "G"
+msgstr "ទ្រីលាន"
+
+#: inc/Blocks/ExchangeRate.php:64
+msgid "Currency/Unit"
+msgstr "រូបិយប័ណ្ណ/ខ្នាត"
+
+#: inc/Blocks/ExchangeRate.php:67
+msgid "Buy"
+msgstr "ទិញ"
+
+#. Plugin Name of the plugin/theme
+#: inc/LoadSettings.php:39
+msgid "MPTC Block"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A WordPress gutenberg plugin."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "sokmean-mptc"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://sokmean.com/"
+msgstr ""
