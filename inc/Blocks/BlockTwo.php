@@ -162,6 +162,10 @@ class BlockTwo extends BaseController
                     'className' => array(
                         'type' => 'string',
                         'default' => ''
+                    ),
+                    'exclude' => array(
+                        'type' => 'string',
+                        'default' => ''
                     )
                 )
             )
@@ -178,16 +182,22 @@ class BlockTwo extends BaseController
         // print_r( $attr['data_slick'] );
         // echo '</pre>';
         // return ob_get_clean();
-        
+        $exclude = explode( ',', $attr['exclude'] );
         // Attributes for WP_Query class
         $args = array(
             'post_type' => $attr['post_type_selected'],
             'tax_query' => array(
                 array(
                     'taxonomy' => $attr['taxonomy_selected'],
-                    'field'    => 'id',
+                    'field'    => 'term_id',
                     'terms'    => $attr['term_selected']
                 ),
+                array(
+                    'taxonomy' => $attr['taxonomy_selected'],
+                    'field'    => 'term_id',
+                    'terms'    => $exclude,
+                    'operator' => 'NOT IN'
+                )
             ),
             'orderby' => $attr['order_by'],
             'order' => $attr['order'],

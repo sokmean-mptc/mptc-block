@@ -9,7 +9,7 @@ import DataSlick from '../components/DataSlick.jsx'
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { InspectorControls } = wp.blockEditor;
-const { PanelBody, CheckboxControl, SelectControl, RangeControl, RadioControl, __experimentalNumberControl : NumberControl } = wp.components
+const { PanelBody, CheckboxControl, SelectControl, TextControl, RadioControl, __experimentalNumberControl : NumberControl } = wp.components
 const { Fragment } = wp.element
 const ALLOWED_BLOCKS = []
 
@@ -72,12 +72,16 @@ registerBlockType( 'mptc-block/slidelist', {
 			default: []
 		},
 		posts_per_page: {
-			type: 'number',
+			type: 'string',
 			default: 5
 		},
 		offset: {
 			type: 'string',
 			default: 0
+		},
+		exclude: {
+			type: 'string',
+			default: ''
 		},
 		order_by: {
 			type: 'string',
@@ -165,7 +169,8 @@ registerBlockType( 'mptc-block/slidelist', {
 			order, 
 			posts_per_page,
 			enable_thumbnail,
-			thumbnail_size
+			thumbnail_size,
+			exclude
 		} = attributes
 
 		return (
@@ -210,6 +215,12 @@ registerBlockType( 'mptc-block/slidelist', {
 							value={ offset }
 							onChange={ ( posts ) => setAttributes( { offset: posts } ) }
 							min={ 0 }
+						/>
+						<br/>
+						<TextControl
+							label={ __( 'Exclude Term ID', 'egov' )  }
+							value={ exclude }
+							onChange={ ( value ) => setAttributes( { exclude: value } ) }
 						/>
 						<br/>
 						<RadioControl
