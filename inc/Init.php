@@ -25,6 +25,7 @@ final class Init
             Blocks\SlideList::class,
             Blocks\BlockOne::class,
             Blocks\BlockTwo::class,
+            Blocks\BlockRender::class,
             // Blocks\Section::class,
             // Blocks\ExchangeRate::class
         ];

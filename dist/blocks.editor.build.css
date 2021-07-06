@@ -70,3 +70,8 @@
 
 .wp-core-ui select[multiple] {
   height: auto !important; }
+.wp-block {
+  max-width: 1024px; }
+
+.wp-core-ui select[multiple] {
+  height: auto !important; }
