@@ -148,7 +148,7 @@ registerBlockType( 'mptc-block/block-message', {
 		const advanced_class = className || ''
 		return ( 
 			<div className={`block-quote row g-0 ${advanced_class}`}>
-				<div className="col-4 col-md-3 avatar d-flex justify-content-center">
+				<div className="col-12 col-sm-4 col-md-3 avatar d-flex justify-content-center">
 					<div className="ratio ratio-1x1">
 						<div style={`background-image: url(${media_uploader.sizes[media_sizes_selected].url});`}></div>
 					</div>

@@ -59,25 +59,21 @@ class ExchangeRate extends BaseController
             $count = count( $data );
             $count = ( $attributes['item_to_show'] > $count || $attributes['item_to_show'] == -1 ) ? $count : $attributes['item_to_show'];
 
-            echo '<table class="table '.$attributes['className'].'"><thead><tr>';
-            echo '<th scope="col">';
-            echo __( 'Currency/Unit', 'egov' );
-            echo '</th>';
-            echo '<th scope="col">';
-            echo __( 'Buy', 'egov' );
-            echo '</th>';
-            echo '</tr></thead><tbody>';
-            for ( $i = 0; $i < $count; $i ++ ) {
-                echo '<tr>';
-                echo '<td>';
-                echo $data[$i]['currency'] .' <sup class="text-muted">('. $data[$i]['symbol'] .')</sup> / '.$data[$i]['unit'];
-                echo '</td>';
-                echo '<td>';
-                echo $data[$i]['ask'];
-                echo '</td>';
-                echo '</tr>';
-            }
-            echo '</tbody></table>';
+            ?>
+                <div class="<?php echo $attributes['className'] ?>">
+                    <?php
+                    for ( $i = 0; $i < $count; $i ++ ) {
+                        ?>
+                        <div class="row grid-style g-0">
+                            <div class="col"><p><?php echo $data[$i]['currency'] ?></p></div>
+                            <div class="col"><p><?php echo $data[$i]['symbol'] ?></p></div>
+                            <div class="col"><p><?php echo $data[$i]['ask'] ?></p></div>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+            <?php
         endif;
 
         return ob_get_clean();

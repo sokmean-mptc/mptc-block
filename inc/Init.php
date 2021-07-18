@@ -27,7 +27,7 @@ final class Init
             Blocks\BlockTwo::class,
             Blocks\BlockRender::class,
             // Blocks\Section::class,
-            // Blocks\ExchangeRate::class
+            Blocks\ExchangeRate::class
         ];
     }
 
