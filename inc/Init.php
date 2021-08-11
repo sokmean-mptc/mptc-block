@@ -26,8 +26,10 @@ final class Init
             Blocks\BlockOne::class,
             Blocks\BlockTwo::class,
             Blocks\BlockRender::class,
-            // Blocks\Section::class,
-            Blocks\ExchangeRate::class
+            Blocks\ExchangeRate::class,
+            Blocks\NusFooterItem::class,
+            Blocks\NusFooter::class,
+            Blocks\GetPost::class,
         ];
     }
 

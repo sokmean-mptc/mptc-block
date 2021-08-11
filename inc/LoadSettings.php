@@ -17,10 +17,11 @@ class LoadSettings extends BaseController
 {
     public function register() {
         add_action( "init", array( $this, "loadTextDomain" ) );
-        add_filter( 'block_categories', array( $this, "registerBlockCategory" ), 10, 2 );
+        add_filter( 'block_categories_all', array( $this, "registerBlockCategory" ), 10, 2 );
     }
 
     public function loadTextDomain() {
+        register_block_type( __DIR__ );
         load_plugin_textdomain( 'egov', false, $this->plugin. '/languages/' );
         wp_set_script_translations( $this->plugin_name, 'egov', $this->plugin_path . 'languages' );
     }

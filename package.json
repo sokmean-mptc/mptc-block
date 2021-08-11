@@ -4,15 +4,15 @@
   "description": "A WordPress Gutenberg plugin",
   "main": "index.js",
   "scripts": {
-    "start": "cgb-scripts start",
-    "build": "cgb-scripts build"
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
   },
   "author": "sokmean-mptc",
   "license": "MIT",
   "dependencies": {
+    "@wordpress/scripts": "^17.1.0",
+    "bootstrap": "^5.1.0",
     "react-photo-gallery": "^8.0.0"
   },
-  "devDependencies": {
-    "cgb-scripts": "^1.23.1"
-  }
+  "devDependencies": {}
 }

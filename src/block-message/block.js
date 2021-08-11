@@ -41,7 +41,7 @@ registerBlockType( 'mptc-block/block-message', {
 		},
 		media_sizes_selected: {
 			type: 'string',
-			default: ''
+			default: 'large'
 		},
 		title: {
             type: 'string',
@@ -150,7 +150,7 @@ registerBlockType( 'mptc-block/block-message', {
 			<div className={`block-quote row g-0 ${advanced_class}`}>
 				<div className="col-12 col-sm-4 col-md-3 avatar d-flex justify-content-center">
 					<div className="ratio ratio-1x1">
-						<div style={`background-image: url(${media_uploader.sizes[media_sizes_selected].url});`}></div>
+						<div style={`background-image: url(${media_uploader.hasOwnProperty('sizes') ? media_uploader.sizes[media_sizes_selected].url : ''});`}></div>
 					</div>
 				</div>
 				<div className="col caption d-flex align-items-center">

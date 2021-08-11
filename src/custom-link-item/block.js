@@ -173,7 +173,7 @@ registerBlockType( 'mptc-block/custom-link-item', {
 									<div className={"hover-text bg-gradient"}>
 										<h5>{description}</h5>
 										<div>
-											<a href={"javascript:void('0');"}>{ readmore_label }</a>
+											<a href={url}>{ readmore_label }</a>
 											<i className={"icofont-rounded-double-right"}></i>
 										</div>
 									</div>

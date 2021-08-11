@@ -80,3 +80,4 @@ typings/
 
 #Ignore compiled script
 /dist
+/build
