@@ -18,6 +18,7 @@ class RegisterAsset extends BaseController
     public function register() {
 
 		add_action( "init", array( $this, "registerScripts" ) );
+		// add_action( "wp_enqueue_scripts", array( $this, "enqueueEditorAssets" ) );
 		add_action( "enqueue_block_editor_assets", array( $this, "enqueueEditorAssets" ) );
 	
     }

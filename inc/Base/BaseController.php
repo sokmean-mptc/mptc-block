@@ -15,6 +15,8 @@ class BaseController
 {
     public $plugin_name;
 
+    public $text_domain;
+
     public $plugin_path;
 
     public $plugin_url;
@@ -27,11 +29,12 @@ class BaseController
 
     public function __construct() {
         $this->plugin_name = 'mptc-block';
+        $this->text_domain = 'egov';
         $this->plugin_path = plugin_dir_path( dirname( __FILE__, 2 ) );
         $this->plugin_url = plugin_dir_url( dirname( __FILE__, 2 ) );
         $this->plugin = plugin_basename( dirname( __FILE__, 3 ) );
         $this->meta_key_view_count = 'post_view_count';
-        $this->post_tages = [ 'post_tag', 'category' ];
+        $this->post_tages = [ 'post_tag' ];
     }
 
     public function getHumanPostDate() {

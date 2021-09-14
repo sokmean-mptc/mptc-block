@@ -21,9 +21,10 @@ class LoadSettings extends BaseController
     }
 
     public function loadTextDomain() {
-        register_block_type( __DIR__ );
-        load_plugin_textdomain( 'egov', false, $this->plugin. '/languages/' );
-        wp_set_script_translations( $this->plugin_name, 'egov', $this->plugin_path . 'languages' );
+        // register_block_type( __DIR__ );
+        load_plugin_textdomain( $this->text_domain, false, $this->plugin. '/languages/' );
+        $script_name = $this->plugin_name . '-js';
+        wp_set_script_translations( $script_name, $this->text_domain );
     }
 
     public function registerBlockCategory( $categories ) {

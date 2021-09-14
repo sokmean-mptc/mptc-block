@@ -22,7 +22,6 @@ class NusFooter extends BaseController
     public function registerBlock() {
         register_block_type(
             $this->plugin_name . '/nus-footer', array(
-                // 'api_version'   => 1,
                 'style'         => $this->plugin_name . '-style',
                 'editor_script' => $this->plugin_name . '-js',
                 'editor_style'  => $this->plugin_name . '-editor-css',
