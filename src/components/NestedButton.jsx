@@ -1,4 +1,3 @@
-const { __ } = wp.i18n
 const { InnerBlocks } = wp.blockEditor
 const NestedButton = ( { allowedBlocks } ) => {
     return (

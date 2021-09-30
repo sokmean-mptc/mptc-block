@@ -9,11 +9,11 @@ const { PanelBody, TextareaControl } = wp.components
 const { Fragment } = wp.element
 
 registerBlockType( 'mptc-block/youtube-playlist', {
-	title: __( 'Youtube Playlist', 'egov' ),
+	title: __( 'Youtube Playlist', 'mptc' ),
 	icon: 'admin-page',
 	category: 'mptc-block', 
 	keywords: [
-		__( 'youtube playlist', 'egov' )
+		__( 'youtube playlist', 'mptc' )
 	],
 	attributes: {
 		mark_text: {
@@ -111,7 +111,7 @@ registerBlockType( 'mptc-block/youtube-playlist', {
 						/>
 					</PanelBody>
 					<PanelBody 
-						title={ __( 'Block Options', 'egov' ) }
+						title={ __( 'Block Options', 'mptc' ) }
 						initialOpen={ toggle_panel }
 						onToggle={ () => {
 							setAttributes( { toggle_panel: ! toggle_panel } ) 
@@ -122,14 +122,14 @@ registerBlockType( 'mptc-block/youtube-playlist', {
 							setAttributes={setAttributes}
 						/>
 						<TextareaControl
-							label= { __( 'Key', 'egov' ) }
+							label= { __( 'Key', 'mptc' ) }
 							value={ key }
 							onChange={ ( val ) => {
 								setAttributes( { key: val, data_playlist: {} })
 							} }
 						/>
 						<TextareaControl
-							label= { __( 'Playlist', 'egov' ) }
+							label= { __( 'Playlist', 'mptc' ) }
 							value={ playlist_id }
 							onChange={ ( val ) => {
 								setAttributes( { playlist_id: val, data_playlist: {} })

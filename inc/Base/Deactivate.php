@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package Egov
+ * @package MPTC
  */
 
 namespace MPTCB\Base;

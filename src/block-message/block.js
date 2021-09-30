@@ -12,11 +12,11 @@ import './style.scss';
 import './editor.scss';
 
 registerBlockType( 'mptc-block/block-message', {
-	title: __( 'Block Message', 'egov' ),
+	title: __( 'Block Message', 'mptc' ),
 	icon: 'admin-page',
 	category: 'mptc-block',
 	keywords: [
-		__( 'block message', 'egov' )
+		__( 'block message', 'mptc' )
 	],
 	attributes: {
 		mark_text: {
@@ -87,7 +87,7 @@ registerBlockType( 'mptc-block/block-message', {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Block Options', 'egov' ) }
+						title={ __( 'Block Options', 'mptc' ) }
 						initialOpen={ toggle_panel }
 						onToggle={ () => {
 							setAttributes( { toggle_panel: ! toggle_panel } ) 
@@ -95,33 +95,33 @@ registerBlockType( 'mptc-block/block-message', {
 					>
 						<div
 							style={ { marginBottom: 10, fontSize: 14 } }
-						>{ __( 'Open Media Library', 'egov' ) }</div>
+						>{ __( 'Open Media Library', 'mptc' ) }</div>
 						<CustomMediaUpload
 							attributes={ attributes }
 							setAttributes={ setAttributes }
 						/>
 						<TextControl
-							label= { __( 'Title', 'egov' ) }
+							label= { __( 'Title', 'mptc' ) }
 							value={ title }
 							onChange={ ( value ) => setAttributes( { title: value } ) }
 						/>
 						<TextControl
-							label= { __( 'Link', 'egov' ) }
+							label= { __( 'Link', 'mptc' ) }
 							value={ title_link }
 							onChange={ ( value ) => setAttributes( { title_link: value } ) }
 						/>
 						<TextareaControl
-							label= { __( 'Description', 'egov' ) }
+							label= { __( 'Description', 'mptc' ) }
 							value={ description }
 							onChange={ ( value ) => setAttributes( { description: value } ) }
 						/>
 						<TextControl
-							label= { __( 'Feedback Title', 'egov' ) }
+							label= { __( 'Feedback Title', 'mptc' ) }
 							value={ contact_title }
 							onChange={ ( value ) => setAttributes( { contact_title: value } ) }
 						/>
 						<TextControl
-							label= { __( 'Link', 'egov' ) }
+							label= { __( 'Link', 'mptc' ) }
 							value={ contact_link }
 							onChange={ ( value ) => setAttributes( { contact_link: value } ) }
 						/>

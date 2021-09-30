@@ -18,29 +18,29 @@ const ThumbnailColumnSize = ( { attributes, setAttributes } ) => {
         
     return ( [
             <CheckboxControl
-                label={ __( 'Enable Thumbnail', 'egov' ) }
+                label={ __( 'Enable Thumbnail', 'mptc' ) }
                 checked={ enable_thumbnail }
                 onChange={ ( boolean ) => { setAttributes( { enable_thumbnail: boolean } ) } }
             />,
             <SelectControl
-                label={ __( 'Thumbnail Size', 'egov' ) }
+                label={ __( 'Thumbnail Size', 'mptc' ) }
                 value={ thumbnail_size }
                 disabled={ ! enable_thumbnail }
                 options={ [
                     {
-                        label: __( 'Thumbnail', 'egov' ),
+                        label: __( 'Thumbnail', 'mptc' ),
                         value: 'thumbnail'
                     },
                     {
-                        label: __( 'Medium', 'egov' ),
+                        label: __( 'Medium', 'mptc' ),
                         value: 'medium'
                     },
                     {
-                        label: __( 'Large', 'egov' ),
+                        label: __( 'Large', 'mptc' ),
                         value: 'large'
                     },
                     {
-                        label: __( 'Full', 'egov' ),
+                        label: __( 'Full', 'mptc' ),
                         value: 'full'
                     }
                 ] }
@@ -48,7 +48,7 @@ const ThumbnailColumnSize = ( { attributes, setAttributes } ) => {
             />,
             <RangeControl
                 disabled={ ! enable_thumbnail }
-                label={ __( 'Column SM', 'egov' ) }
+                label={ __( 'Column SM', 'mptc' ) }
                 value={ thumbnail_column_xs }
                 onChange={ ( columns ) => setAttributes( { thumbnail_column_xs: columns } ) }
                 min={ 1 }
@@ -57,7 +57,7 @@ const ThumbnailColumnSize = ( { attributes, setAttributes } ) => {
             <div>
                 <RangeControl
                     disabled={ ! ( ( enable_thumbnail ) * ( ! thumbnail_column_sm_bypass ) ) }
-                    label={ __( 'Column SM', 'egov' ) }
+                    label={ __( 'Column SM', 'mptc' ) }
                     value={ thumbnail_column_sm }
                     onChange={ ( columns ) => setAttributes( { thumbnail_column_sm: columns } ) }
                     min={ 1 }
@@ -66,14 +66,14 @@ const ThumbnailColumnSize = ( { attributes, setAttributes } ) => {
             </div>,
             <CheckboxControl
                 disabled={ ! enable_thumbnail }
-                label={ __( 'Bypass', 'egov' ) }
+                label={ __( 'Bypass', 'mptc' ) }
                 checked={ thumbnail_column_sm_bypass }
                 onChange={ ( boolean ) => { setAttributes( { thumbnail_column_sm_bypass: boolean } ) } }
             />,
             <div>
                 <RangeControl
                     disabled={ ! ( ( enable_thumbnail ) * ( ! thumbnail_column_md_bypass ) ) }
-                    label={ __( 'Column MD', 'egov' ) }
+                    label={ __( 'Column MD', 'mptc' ) }
                     value={ thumbnail_column_md }
                     onChange={ ( columns ) => setAttributes( { thumbnail_column_md: columns } ) }
                     min={ 1 }
@@ -82,14 +82,14 @@ const ThumbnailColumnSize = ( { attributes, setAttributes } ) => {
             </div>,
             <CheckboxControl
                 disabled={ ! enable_thumbnail }
-                label={ __( 'Bypass', 'egov' ) }
+                label={ __( 'Bypass', 'mptc' ) }
                 checked={ thumbnail_column_md_bypass }
                 onChange={ ( boolean ) => { setAttributes( { thumbnail_column_md_bypass: boolean } ) } }
             />,
             <div>
                 <RangeControl
                     disabled={ ! ( ( enable_thumbnail ) * ( ! thumbnail_column_lg_bypass ) ) }
-                    label={ __( 'Column MD', 'egov' ) }
+                    label={ __( 'Column MD', 'mptc' ) }
                     value={ thumbnail_column_lg }
                     onChange={ ( columns ) => setAttributes( { thumbnail_column_lg: columns } ) }
                     min={ 1 }
@@ -98,14 +98,14 @@ const ThumbnailColumnSize = ( { attributes, setAttributes } ) => {
             </div>,
             <CheckboxControl
                 disabled={ ! enable_thumbnail }
-                label={ __( 'Bypass', 'egov' ) }
+                label={ __( 'Bypass', 'mptc' ) }
                 checked={ thumbnail_column_lg_bypass }
                 onChange={ ( boolean ) => { setAttributes( { thumbnail_column_lg_bypass: boolean } ) } }
             />,
             <div>
                 <RangeControl
                     disabled={ ! ( ( enable_thumbnail ) * ( ! thumbnail_column_xl_bypass ) ) }
-                    label={ __( 'Column MD', 'egov' ) }
+                    label={ __( 'Column MD', 'mptc' ) }
                     value={ thumbnail_column_xl }
                     onChange={ ( columns ) => setAttributes( { thumbnail_column_xl: columns } ) }
                     min={ 1 }
@@ -114,7 +114,7 @@ const ThumbnailColumnSize = ( { attributes, setAttributes } ) => {
             </div>,
             <CheckboxControl
                 disabled={ ! enable_thumbnail }
-                label={ __( 'Bypass', 'egov' ) }
+                label={ __( 'Bypass', 'mptc' ) }
                 checked={ thumbnail_column_xl_bypass }
                 onChange={ ( boolean ) => { setAttributes( { thumbnail_column_xl_bypass: boolean } ) } }
             />,

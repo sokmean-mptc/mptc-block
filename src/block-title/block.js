@@ -9,11 +9,11 @@ import './style.scss';
 import './editor.scss';
 
 registerBlockType( 'mptc-block/block-title', {
-	title: __( 'Block Title', 'egov' ),
+	title: __( 'Block Title', 'mptc' ),
 	icon: 'admin-page',
 	category: 'mptc-block',
 	keywords: [
-		__( 'block title', 'egov' )
+		__( 'block title', 'mptc' )
 	],
 	attributes: {
 		title: {
@@ -114,14 +114,14 @@ registerBlockType( 'mptc-block/block-title', {
 			<Fragment>
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Block Options', 'egov' ) }
+						title={ __( 'Block Options', 'mptc' ) }
 						initialOpen={ toggle_panel }
 						onToggle={ () => {
 							setAttributes( { toggle_panel: ! toggle_panel } ) 
 						} }
 					>
 						<TextControl
-							label= { __( 'Block Title', 'egov' ) }
+							label= { __( 'Block Title', 'mptc' ) }
 							value={ title }
 							onChange={ ( value ) => setAttributes( { title: value } ) }
 						/>
@@ -131,7 +131,7 @@ registerBlockType( 'mptc-block/block-title', {
 						/>
 						<br/>
 						<ToggleControl
-							label= { __( 'Or Use Custom Link', 'egov' ) }
+							label= { __( 'Or Use Custom Link', 'mptc' ) }
 							checked={ enable_custom_link }
 							onChange={ ( value ) => setAttributes( { enable_custom_link: value } ) }
 						/>
@@ -141,12 +141,12 @@ registerBlockType( 'mptc-block/block-title', {
 							onChange={ ( value ) => setAttributes( { custom_link: value } ) }
 						/>
 						<RadioControl
-							label={ __( 'Align', 'egov' )}
+							label={ __( 'Align', 'mptc' )}
 							selected={ align }
 							options={ [
-								{ label: __( 'Align Left', 'egov' ), value: 'text-left' },
-								{ label: __( 'Align Center', 'egov' ), value: 'text-center' },
-								{ label: __( 'Align Right', 'egov' ), value: 'text-right' }
+								{ label: __( 'Align Left', 'mptc' ), value: 'text-left' },
+								{ label: __( 'Align Center', 'mptc' ), value: 'text-center' },
+								{ label: __( 'Align Right', 'mptc' ), value: 'text-right' }
 							] }
 							onChange={ ( option ) => { setAttributes( { align: option } ) } }
 						/>

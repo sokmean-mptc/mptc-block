@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package Egov
+ * @package MPTC
  */
 
 namespace MPTCB\Base;
@@ -29,7 +29,7 @@ class BaseController
 
     public function __construct() {
         $this->plugin_name = 'mptc-block';
-        $this->text_domain = 'egov';
+        $this->text_domain = 'mptc';
         $this->plugin_path = plugin_dir_path( dirname( __FILE__, 2 ) );
         $this->plugin_url = plugin_dir_url( dirname( __FILE__, 2 ) );
         $this->plugin = plugin_basename( dirname( __FILE__, 3 ) );
@@ -38,7 +38,7 @@ class BaseController
     }
 
     public function getHumanPostDate() {
-        return '<time datetime="' . get_post_time('c', true) . '"><i class="icofont-clock-time"></i> ' . human_time_diff( get_the_time('U'), current_time('timestamp') ) . __( ' ago', 'egov' ) . '</time>';
+        return '<time alt="' . get_the_date() . '" title="' . get_the_date() . '" datetime="' . get_post_time('c', true) . '"><i class="icofont-clock-time"></i> ' . human_time_diff( get_the_time('U'), current_time('timestamp') ) . __( ' ago', 'mptc' ) . '</time>';
     }
 
     public function getPostView() {
@@ -46,7 +46,7 @@ class BaseController
     }
 
     public function getAuthorPostsUrl() {
-        return '<i class="icofont-user-alt-3"></i> ' . __( 'by ', 'egov' ) . '<a href="' . get_author_posts_url( get_the_author_meta('ID') ) . '"> ' . get_the_author() . '</a>';
+        return '<i class="icofont-user-alt-3"></i> ' . __( 'by ', 'mptc' ) . '<a href="' . get_author_posts_url( get_the_author_meta('ID') ) . '"> ' . get_the_author() . '</a>';
     }
 
     public function getTheTermList( int $post_id, array $taxonomy, string $before = '', string $sep = '', string $after = '' ) {
@@ -84,13 +84,13 @@ class BaseController
 
         switch ( $count ) {
             case 2:
-                $value = number_format_i18n( $number/1000, 1 ) . __( 'K', 'egov' );
+                $value = number_format_i18n( $number/1000, 1 ) . __( 'K', 'mptc' );
                 break;
             case 3:
-                $value = number_format_i18n( $number/1000000, 1 ) . __( 'M', 'egov' );
+                $value = number_format_i18n( $number/1000000, 1 ) . __( 'M', 'mptc' );
                 break;
             case 4:
-                $value = number_format_i18n( $number/1000000000, 1 ) . __( 'G', 'egov' );
+                $value = number_format_i18n( $number/1000000000, 1 ) . __( 'G', 'mptc' );
                 break;
             default:
                 $value = $number;

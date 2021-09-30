@@ -14,11 +14,11 @@ const { Fragment } = wp.element
 const ALLOWED_BLOCKS = []
 
 registerBlockType( 'mptc-block/slideshow', {
-	title: __( 'Slide Show', 'egov' ),
+	title: __( 'Slide Show', 'mptc' ),
 	icon: 'admin-page',
 	category: 'mptc-block', 
 	keywords: [
-		__( 'slide show', 'egov' )
+		__( 'slide show', 'mptc' )
 	],
 	attributes: {
 		mark_text: {
@@ -178,7 +178,7 @@ registerBlockType( 'mptc-block/slideshow', {
 						/>
 					</PanelBody>
 					<PanelBody 
-						title={ __( 'Block Options', 'egov' ) }
+						title={ __( 'Block Options', 'mptc' ) }
 						initialOpen={ toggle_panel }
 						onToggle={ () => {
 							setAttributes( { toggle_panel: ! toggle_panel } ) 
@@ -195,7 +195,7 @@ registerBlockType( 'mptc-block/slideshow', {
 						/>
 						<br/>
 						<NumberControl
-							label={ __( 'Number of Post', 'egov' )  }
+							label={ __( 'Number of Post', 'mptc' )  }
 							isShiftStepEnabled={ true }
 							shiftStep={ 10 }
 							value={ posts_per_page }
@@ -204,7 +204,7 @@ registerBlockType( 'mptc-block/slideshow', {
 						/>
 						<br/>
 						<NumberControl
-							label={ __( 'Post Offset', 'egov' )  }
+							label={ __( 'Post Offset', 'mptc' )  }
 							isShiftStepEnabled={ true }
 							shiftStep={ 10 }
 							value={ offset }
@@ -213,13 +213,13 @@ registerBlockType( 'mptc-block/slideshow', {
 						/>
 						<br/>
 						<TextControl
-							label={ __( 'Exclude Term ID', 'egov' )  }
+							label={ __( 'Exclude Term ID', 'mptc' )  }
 							value={ exclude }
 							onChange={ ( value ) => setAttributes( { exclude: value } ) }
 						/>
 						<br/>
 						<RadioControl
-							label={ __( 'Order By', 'egov' ) }
+							label={ __( 'Order By', 'mptc' ) }
 							selected={ order_by }
 							options={ [ 
 								{ label: 'Date', value: 'date' }, 
@@ -230,30 +230,30 @@ registerBlockType( 'mptc-block/slideshow', {
 							onChange={ ( boolean ) => setAttributes( { order_by: boolean } ) }
 						/>
 						<RadioControl
-							label={ __( 'Order', 'egov' ) }
+							label={ __( 'Order', 'mptc' ) }
 							selected={ order }
 							options={ [ { label: 'DESC', value: 'DESC' }, { label: 'ASC', value: 'ASC' } ] }
 							onChange={ ( boolean ) => setAttributes( { order: boolean } ) }
 						/>
 						<hr/>
 						<SelectControl
-							label={ __( 'Thumbnail Size', 'egov' ) }
+							label={ __( 'Thumbnail Size', 'mptc' ) }
 							value={ thumbnail_size }
 							options={ [
 								{
-									label: __( 'Thumbnail', 'egov' ),
+									label: __( 'Thumbnail', 'mptc' ),
 									value: 'thumbnail'
 								},
 								{
-									label: __( 'Medium', 'egov' ),
+									label: __( 'Medium', 'mptc' ),
 									value: 'medium'
 								},
 								{
-									label: __( 'Large', 'egov' ),
+									label: __( 'Large', 'mptc' ),
 									value: 'large'
 								},
 								{
-									label: __( 'Full', 'egov' ),
+									label: __( 'Full', 'mptc' ),
 									value: 'full'
 								}
 							] }

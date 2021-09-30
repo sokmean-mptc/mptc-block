@@ -1,4 +1,3 @@
-const { __ } = wp.i18n
 const { TextControl } = wp.components
 
 const MarkText = ( { attributes, setAttributes } ) => {
@@ -6,7 +5,7 @@ const MarkText = ( { attributes, setAttributes } ) => {
 
     return (
         <TextControl
-            label= { __( 'Mark Text', 'egov' ) }
+            label= { 'Mark Text' }
             value={ mark_text }
             onChange={ ( value ) => setAttributes( { mark_text: value } ) }
         />

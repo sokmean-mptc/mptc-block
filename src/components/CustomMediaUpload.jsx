@@ -48,7 +48,7 @@ const CustomMediaUpload = ( { attributes, setAttributes } ) => {
                     <Button onClick={ () => { 
                         setAttributes( { media_uploader: {}, media_alt: '', media_sizes: [], media_sizes_selected: '' } )
                     } } isLink isDestructive style={ { marginBottom: 15 } } >
-                        { __( 'Remove image', 'egov' ) }
+                        { __( 'Remove image', 'mptc' ) }
                     </Button>
                 </MediaUploadCheck>
             }

@@ -11,7 +11,9 @@
   "license": "MIT",
   "dependencies": {
     "@wordpress/scripts": "^17.1.0",
+    "@wordpress/server-side-render": "^3.0.2",
     "bootstrap": "^5.1.0",
+    "mptclayout": "sokmean-mptc/mptclayout",
     "react-photo-gallery": "^8.0.0"
   },
   "devDependencies": {}

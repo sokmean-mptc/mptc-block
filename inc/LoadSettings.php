@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package Egov
+ * @package MPTC
  */
 
 namespace MPTCB;
@@ -38,7 +38,7 @@ class LoadSettings extends BaseController
             array(
                 array(
                     'slug' => $this->plugin_name,
-                    'title' => __( 'MPTC Block', 'egov' ),
+                    'title' => __( 'MPTC Block', 'mptc' ),
                     'icon'  => '',
                 ),
             )

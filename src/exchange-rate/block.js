@@ -6,11 +6,11 @@ const { Fragment } = wp.element
 import MarkText from '../components/MarkText.jsx'
 
 registerBlockType( 'mptc-block/exchange-rate', {
-	title: __( 'Exchange Rate', 'egov' ),
+	title: __( 'Exchange Rate', 'mptc' ),
 	icon: 'admin-page',
 	category: 'mptc-block',
 	keywords: [
-		__( 'Exchange Rate', 'egov' )
+		__( 'Exchange Rate', 'mptc' )
 	],
 	attributes: {
 		mark_text: {
@@ -48,19 +48,19 @@ registerBlockType( 'mptc-block/exchange-rate', {
 						/>
 					</PanelBody>
 					<PanelBody 
-						title={ __( 'Block Options', 'egov' ) }
+						title={ __( 'Block Options', 'mptc' ) }
 						initialOpen={ toggle_panel }
 						onToggle={ () => {
 							setAttributes( { toggle_panel: ! toggle_panel } ) 
 						} }
 					>
 						<TextControl
-							label={ __( 'Api URL', 'egov' ) }
+							label={ __( 'Api URL', 'mptc' ) }
 							value={ api }
 							onChange={ ( value ) => setAttributes( { api: value } ) }
 						/>
 						<NumberControl
-							label={ __( 'Item To Show', 'egov' )  }
+							label={ __( 'Item To Show', 'mptc' )  }
 							isShiftStepEnabled={ true }
 							shiftStep={ 10 }
 							value={ item_to_show }

@@ -1,58 +1,41 @@
-// import './style.scss'
-// import './editor.scss'
-import MarkText from '../components/MarkText.jsx'
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { InspectorControls } = wp.blockEditor;
+const { registerBlockType } = wp.blocks
+const { InspectorControls } = wp.blockEditor
 const { PanelBody, TextControl, TextareaControl } = wp.components
-const { Fragment } = wp.element
+const { Fragment, RawHTML } = wp.element
 
 registerBlockType( 'mptc-block/nus-footer-item', {
-	// apiVersion: 2,
-	title: __( 'NUS Footer Item', 'egov' ),
+	title: 'NUS Footer Item',
 	icon: 'admin-page',
 	category: 'mptc-block', 
-	keywords: [
-		__( 'nus footer item', 'egov' )
-	],
+	keywords: [ 'nus footer item' ],
 	parent: [ 'mptc-block/nus-footer' ],
 	attributes: {
-		mark_text: {
-            type: 'string',
-			default: 'NUS Item'
-		},
 		toggle_panel: {
 			type: 'boolean',
-			default: false
+			default: true
 		},
 		icofont: {
 			type: 'string',
-			default: ''
+			default: '<i class="icofont-location-pin"></i>'
 		},
 		description: {
 			type: 'string',
-			default: ''
+			default: 'Address Information'
 		},
 	},
 	edit: ( { attributes, setAttributes  } ) => {
 		const {
-			mark_text, 
 			toggle_panel, 
 			icofont,
 			description
 		} = attributes
 
+
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelBody>
-						<MarkText
-							attributes={attributes}
-							setAttributes={setAttributes}
-						/>
-					</PanelBody>
 					<PanelBody 
-						title={ __( 'Block Options', 'egov' ) }
+						title={ 'Block Options' }
 						initialOpen={ toggle_panel }
 						onToggle={ () => {
 							setAttributes( { toggle_panel: ! toggle_panel } ) 
@@ -60,12 +43,12 @@ registerBlockType( 'mptc-block/nus-footer-item', {
 					>
 												
 						<TextControl
-							label= { __( 'Icofont', 'egov' ) }
+							label= { 'Icofont', 'mptc' }
 							value={ icofont }
 							onChange={ ( value ) => setAttributes( { icofont: value } ) }
 						/>
 						<TextareaControl
-							label= { __( 'Description', 'egov' ) }
+							label= { 'Description' }
 							value={ description }
 							onChange={ ( value ) => setAttributes( { description: value } ) }
 						/>
@@ -74,22 +57,15 @@ registerBlockType( 'mptc-block/nus-footer-item', {
 					</PanelBody>
 				</InspectorControls>
 				
-				<div className={ 'border p-3' }>
-					<small>{ mark_text }</small>
-				</div>
+				<li className={`d-flex align-items-baseline`}>
+					<RawHTML>{icofont}</RawHTML><span><RawHTML>{description}</RawHTML></span>
+				</li>
 				
+	
 			</Fragment>
 		)
 	},
-	save: ( { attributes, className } ) => {
-		const add_class = className ? className : ''
-		const {
-			icofont,
-			description
-		} = attributes
-			
-		return (
-			null
-		)		
+	save: () => {
+		return null
 	}
 } )

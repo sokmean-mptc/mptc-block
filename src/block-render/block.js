@@ -9,11 +9,11 @@ const { TextControl, PanelBody, CheckboxControl, RadioControl, __experimentalNum
 const { Fragment } = wp.element
 
 registerBlockType( 'mptc-block/block-render', {
-	title: __( 'Block Render', 'egov' ),
+	title: __( 'Block Render', 'mptc' ),
 	icon: 'admin-page',
 	category: 'mptc-block', 
 	keywords: [
-		__( 'Block Render', 'egov' )
+		__( 'Block Render', 'mptc' )
 	],
 	attributes: {
 		mark_text: {
@@ -95,14 +95,14 @@ registerBlockType( 'mptc-block/block-render', {
 						/>
 					</PanelBody>
 					<PanelBody 
-						title={ __( 'Block Options', 'egov' ) }
+						title={ __( 'Block Options', 'mptc' ) }
 						initialOpen={ toggle_panel }
 						onToggle={ () => {
 							setAttributes( { toggle_panel: ! toggle_panel } ) 
 						} }
 					>
 						<CheckboxControl
-							label= { __( 'Enable Title', 'egov' ) }
+							label= { __( 'Enable Title', 'mptc' ) }
 							checked={ enable_title }
 							onChange={ ( boolean ) => {
 								setAttributes( { enable_title: boolean })
@@ -114,7 +114,7 @@ registerBlockType( 'mptc-block/block-render', {
 						/>
 						<br/>
 						<NumberControl
-							label={ __( 'Number of Post', 'egov' )  }
+							label={ __( 'Number of Post', 'mptc' )  }
 							isShiftStepEnabled={ true }
 							shiftStep={ 10 }
 							value={ posts_per_page }
@@ -123,7 +123,7 @@ registerBlockType( 'mptc-block/block-render', {
 						/>
 						<br/>
 						<NumberControl
-							label={ __( 'Post Offset', 'egov' )  }
+							label={ __( 'Post Offset', 'mptc' )  }
 							isShiftStepEnabled={ true }
 							shiftStep={ 10 }
 							value={ offset }
@@ -132,13 +132,13 @@ registerBlockType( 'mptc-block/block-render', {
 						/>
 						<br/>
 						<TextControl
-							label={ __( 'Exclude Term ID', 'egov' )  }
+							label={ __( 'Exclude Term ID', 'mptc' )  }
 							value={ exclude }
 							onChange={ ( value ) => setAttributes( { exclude: value } ) }
 						/>
 						<br/>
 						<RadioControl
-							label={ __( 'Order By', 'egov' ) }
+							label={ __( 'Order By', 'mptc' ) }
 							selected={ order_by }
 							options={ [ 
 								{ label: 'Date', value: 'date' }, 
@@ -149,7 +149,7 @@ registerBlockType( 'mptc-block/block-render', {
 							onChange={ ( boolean ) => setAttributes( { order_by: boolean } ) }
 						/>
 						<RadioControl
-							label={ __( 'Order', 'egov' ) }
+							label={ __( 'Order', 'mptc' ) }
 							selected={ order }
 							options={ [ { label: 'DESC', value: 'DESC' }, { label: 'ASC', value: 'ASC' } ] }
 							onChange={ ( boolean ) => setAttributes( { order: boolean } ) }

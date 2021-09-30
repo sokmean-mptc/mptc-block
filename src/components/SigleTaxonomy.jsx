@@ -67,7 +67,7 @@ const SigleTaxonomy = ( { attributes, setAttributes } ) => {
     return (
         <div>
             <RadioControl
-                label={ __( 'Post Type', 'egov' ) }
+                label={ __( 'Post Type', 'mptc' ) }
                 selected={ post_type_ii_selected }
                 options={ post_type_ii }
                 onChange={ ( value ) => {

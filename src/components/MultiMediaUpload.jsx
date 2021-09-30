@@ -29,17 +29,17 @@ const MultiMediaUpload = ( { attributes, setAttributes } ) => {
                         >
                             {   
                                 ! media_uploader.length &&
-                                __( 'Open Media Library', 'egov' ) 
+                                __( 'Open Media Library', 'mptc' ) 
                             }
                             {
                                 !! media_uploader.length &&
                                 <strong>
                                     
                                         { media_uploader.length +' ' }
-                                        { __( 'Image(s)', 'egov' ) }
+                                        { __( 'Image(s)', 'mptc' ) }
                                     
                                     <p>
-                                        { __( 'Edit Gallery', 'egov' ) }
+                                        { __( 'Edit Gallery', 'mptc' ) }
                                     </p>
                                 </strong> 
                             
@@ -54,7 +54,7 @@ const MultiMediaUpload = ( { attributes, setAttributes } ) => {
                                 isLink 
                                 isDestructive 
                             >
-                                { __( 'Remove Gallery', 'egov' ) }
+                                { __( 'Remove Gallery', 'mptc' ) }
                             </Button>
                         }
                     </div>

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package Egov
+ * @package MPTC
  */
 
 namespace MPTCB;
@@ -21,6 +21,7 @@ final class Init
         return [
             LoadSettings::class,
             RegisterAsset::class,
+            RegisterRestRoute::class,
             Blocks\SlideShow::class,
             Blocks\SlideList::class,
             Blocks\BlockOne::class,
@@ -30,6 +31,7 @@ final class Init
             Blocks\NusFooterItem::class,
             Blocks\NusFooter::class,
             Blocks\GetPost::class,
+            Blocks\LanguageSwitcher::class
         ];
     }
 

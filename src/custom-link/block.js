@@ -10,11 +10,11 @@ const { Fragment } = wp.element
 const ALLOWED_BLOCKS = [ 'mptc-block/custom-link-item' ]
 
 registerBlockType( 'mptc-block/custom-link', {
-	title: __( 'Custom Link', 'egov' ),
+	title: __( 'Custom Link', 'mptc' ),
 	icon: 'admin-page',
 	category: 'mptc-block', 
 	keywords: [
-		__( 'custom link', 'egov' )
+		__( 'custom link', 'mptc' )
 	],
 	attributes: {
 		mark_text: {
@@ -59,7 +59,7 @@ registerBlockType( 'mptc-block/custom-link', {
 						/>
 					</PanelBody>
 					<PanelBody 
-						title={ __( 'Block Options', 'egov' ) }
+						title={ __( 'Block Options', 'mptc' ) }
 						initialOpen={ toggle_panel }
 						onToggle={ () => {
 							setAttributes( { toggle_panel: ! toggle_panel } ) 

@@ -9,11 +9,11 @@ const { PanelBody, TextControl, SelectControl, TextareaControl } = wp.components
 const { Fragment } = wp.element
 
 registerBlockType( 'mptc-block/custom-link-item', {
-	title: __( 'Custom Link Item', 'egov' ),
+	title: __( 'Custom Link Item', 'mptc' ),
 	icon: 'admin-page',
 	category: 'mptc-block', 
 	keywords: [
-		__( 'custom link item', 'egov' )
+		__( 'custom link item', 'mptc' )
 	],
 	parent: [ 'mptc-block/custom-link' ],
 	attributes: {
@@ -83,7 +83,7 @@ registerBlockType( 'mptc-block/custom-link-item', {
 						/>
 					</PanelBody>
 					<PanelBody 
-						title={ __( 'Block Options', 'egov' ) }
+						title={ __( 'Block Options', 'mptc' ) }
 						initialOpen={ toggle_panel }
 						onToggle={ () => {
 							setAttributes( { toggle_panel: ! toggle_panel } ) 
@@ -91,41 +91,41 @@ registerBlockType( 'mptc-block/custom-link-item', {
 					>
 						<div
 							style={ { marginBottom: 10, fontSize: 14 } }
-						>{ __( 'Open Media Library', 'egov' ) }</div>
+						>{ __( 'Open Media Library', 'mptc' ) }</div>
 						<CustomMediaUpload
 							attributes={ attributes }
 							setAttributes={ setAttributes }
 						/>
 						<TextControl
-							label= { __( 'Title', 'egov' ) }
+							label= { __( 'Title', 'mptc' ) }
 							value={ title }
 							onChange={ ( value ) => setAttributes( { title: value } ) }
 						/>
 						<TextareaControl
-							label= { __( 'Description', 'egov' ) }
+							label= { __( 'Description', 'mptc' ) }
 							value={ description }
 							onChange={ ( value ) => setAttributes( { description: value } ) }
 						/>
 						<TextControl
-							label= { __( 'Custom URL', 'egov' ) }
+							label= { __( 'Custom URL', 'mptc' ) }
 							value={ url }
 							onChange={ ( value ) => setAttributes( { url: value } ) }
 						/>
 						<TextControl
-							label= { __( 'Read More', 'egov' ) }
+							label= { __( 'Read More', 'mptc' ) }
 							value={ readmore_label }
 							onChange={ ( value ) => setAttributes( { readmore_label: value } ) }
 						/>
 						<SelectControl
-							label={ __( 'Odd/Even', 'egov' ) }
+							label={ __( 'Odd/Even', 'mptc' ) }
 							value={ odd_even }
 							options={ [
 								{
-									label: __( 'ODD', 'egov' ),
+									label: __( 'ODD', 'mptc' ),
 									value: 'odd'
 								},
 								{
-									label: __( 'EVEN', 'egov' ),
+									label: __( 'EVEN', 'mptc' ),
 									value: 'even'
 								}
 							] }
@@ -154,7 +154,14 @@ registerBlockType( 'mptc-block/custom-link-item', {
 			media_alt,
 			media_sizes_selected
 		} = attributes
-			
+		let src = ''
+		try {
+			src = media_uploader.sizes[media_sizes_selected].url
+		} catch (error) {
+			console.log(error)
+			return null
+		}
+
 		return (
 			<li className={ `block-link-item d-block ${odd_even} ${add_class}` }>
 				<div className={"ratio ratio-1x1"}>
@@ -162,7 +169,7 @@ registerBlockType( 'mptc-block/custom-link-item', {
 						<figure className={"text-center"}>
 							<div className={"thumbnail"}>
 								<a href={url}>
-									<img src={media_uploader.sizes[media_sizes_selected].url} alt={media_alt} />
+									<img src={src} alt={media_alt} />
 								</a>
 							</div>
 							<figcaption>

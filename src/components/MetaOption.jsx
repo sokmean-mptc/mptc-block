@@ -17,7 +17,7 @@ const MetaOption = ( { attributes, setAttributes } ) => {
     return (
         <div>
             <CheckboxControl
-                label={ __( 'Enable Title', 'egov' ) }
+                label={ __( 'Enable Title', 'mptc' ) }
                 checked={ enable_title }
                 onChange={ ( boolean ) => { setAttributes( { enable_title: boolean } ) } }
             />
@@ -31,7 +31,7 @@ const MetaOption = ( { attributes, setAttributes } ) => {
             />
             <br/>
             <CheckboxControl
-                label={ __( 'Enable Excerpt', 'egov' ) }
+                label={ __( 'Enable Excerpt', 'mptc' ) }
                 checked={ enable_excerpt }
                 onChange={ ( boolean ) => { setAttributes( { enable_excerpt: boolean } ) } }
             />
@@ -45,37 +45,37 @@ const MetaOption = ( { attributes, setAttributes } ) => {
             />
             <br/>
             <CheckboxControl
-                label={ __( 'Enable Meta', 'egov' ) }
+                label={ __( 'Enable Meta', 'mptc' ) }
                 checked={ enable_meta }
                 onChange={ ( boolean ) => { setAttributes( { enable_meta: boolean } ) } }
             />
             <CheckboxControl
                 disabled={ ! enable_meta }
-                label={ __( 'Enable Post Date', 'egov' ) }
+                label={ __( 'Enable Post Date', 'mptc' ) }
                 checked={ enable_post_date }
                 onChange={ ( boolean ) => { setAttributes( { enable_post_date: boolean } ) } }
             />
             <CheckboxControl
                 disabled={ ! enable_meta }
-                label={ __( 'Enable Post Author', 'egov' ) }
+                label={ __( 'Enable Post Author', 'mptc' ) }
                 checked={ enable_post_author }
                 onChange={ ( boolean ) => { setAttributes( { enable_post_author: boolean } ) } }
             />
             <CheckboxControl
                 disabled={ ! enable_meta }
-                label={ __( 'Enable Post View Count', 'egov' ) }
+                label={ __( 'Enable Post View Count', 'mptc' ) }
                 checked={ enable_post_view_count }
                 onChange={ ( boolean ) => { setAttributes( { enable_post_view_count: boolean } ) } }
             />
             <CheckboxControl
                 disabled={ ! enable_meta }
-                label={ __( 'Enable Post Tag', 'egov' ) }
+                label={ __( 'Enable Post Tag', 'mptc' ) }
                 checked={ enable_post_tag }
                 onChange={ ( boolean ) => { setAttributes( { enable_post_tag: boolean } ) } }
             />
             <CheckboxControl
                 disabled={ ! enable_meta }
-                label={ __( 'Enable Post Read More', 'egov' ) }
+                label={ __( 'Enable Post Read More', 'mptc' ) }
                 checked={ enable_post_read_more }
                 onChange={ ( boolean ) => { setAttributes( { enable_post_read_more: boolean } ) } }
             />

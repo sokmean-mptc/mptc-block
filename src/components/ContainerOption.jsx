@@ -6,16 +6,16 @@ const ContainerOption = ( { attributes, setAttributes } ) => {
         
     return (
         <SelectControl
-            label={ __( 'Container Option', 'egov' ) }
+            label={ __( 'Container Option', 'mptc' ) }
             value={ container }
             options={ [
-                { label: __( 'No Container', 'egov' ), value: '' },
-                { label: __( 'Container', 'egov' ), value: 'container' },
-                { label: __( 'Container SM', 'egov' ), value: 'container-sm' },
-                { label: __( 'Container MD', 'egov' ), value: 'container-md' },
-                { label: __( 'Container LG', 'egov' ), value: 'container-lg' },
-                { label: __( 'Container XL', 'egov' ), value: 'container-xl' },
-                { label: __( 'Container Fluid', 'egov' ), value: 'container-fluid' }
+                { label: __( 'No Container', 'mptc' ), value: '' },
+                { label: __( 'Container', 'mptc' ), value: 'container' },
+                { label: __( 'Container SM', 'mptc' ), value: 'container-sm' },
+                { label: __( 'Container MD', 'mptc' ), value: 'container-md' },
+                { label: __( 'Container LG', 'mptc' ), value: 'container-lg' },
+                { label: __( 'Container XL', 'mptc' ), value: 'container-xl' },
+                { label: __( 'Container Fluid', 'mptc' ), value: 'container-fluid' }
             ] }
             onChange={ ( value ) => { setAttributes( { container: value } ) } }
         />

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package Egov
+ * @package MPTC
  */
 
 namespace MPTCB\Blocks;
@@ -22,7 +22,6 @@ class NusFooter extends BaseController
     public function registerBlock() {
         register_block_type(
             $this->plugin_name . '/nus-footer', array(
-                'style'         => $this->plugin_name . '-style',
                 'editor_script' => $this->plugin_name . '-js',
                 'editor_style'  => $this->plugin_name . '-editor-css',
                 'render_callback' => array( $this, 'renderPostsBlock' ),
@@ -38,16 +37,20 @@ class NusFooter extends BaseController
                     'copyright' => array(
                         'type' => 'string',
                         'default' => '&copy; Copyright'
+                    ),
+                    'inner_block' => array(
+                        'type' => 'string',
+                        'default' => ''
                     )
                 )
             )
         );
     }
 
-    public function renderPostsBlock( $attr ) {
+    public function renderPostsBlock( $attr, $content ) {
         ob_start();
         // echo '<pre>';
-        // print_r($attr['innerBlocks']);
+        // print_r($content);
         // echo '</pre>';
         ?>
         <footer class="nus-footer bg-primary text-white">
@@ -59,15 +62,7 @@ class NusFooter extends BaseController
                             <div class="d-flex justify-content-center">
                                 <ul class="nus-contact-us">
                                     <?php
-                                        $blocks = parse_blocks(get_the_content());
-                                        foreach( $blocks as $block ) :
-                                            if( $block['blockName'] === 'mptc-block/nus-footer') :
-                                                foreach( $block['innerBlocks'] as $item ) :
-                                                    echo render_block($item);
-                                                endforeach;
-                                                break;
-                                            endif;
-                                        endforeach;
+                                        echo $content
                                     ?>
                                 </ul>
                             </div>

@@ -8,9 +8,9 @@ const DataSlick = ( { attributes, setAttributes } ) => {
         >
             <label 
                 className={ 'label-section' }
-            >{ __( 'All Screen', 'egov' ) }</label>
+            >{ __( 'All Screen', 'mptc' ) }</label>
             <CheckboxControl
-                label= { __( 'Adaptive Height', 'egov' ) }
+                label= { __( 'Adaptive Height', 'mptc' ) }
                 checked={ data_slick.adaptiveHeight || false }
                 onChange={ 
                     ( boolean ) => {
@@ -26,7 +26,7 @@ const DataSlick = ( { attributes, setAttributes } ) => {
                 }
             />
             <CheckboxControl
-                label= { __( 'Dots', 'egov' ) }
+                label= { __( 'Dots', 'mptc' ) }
                 checked={ data_slick.dots || false }
                 onChange={ 
                     ( boolean ) => {
@@ -42,7 +42,7 @@ const DataSlick = ( { attributes, setAttributes } ) => {
                 }
             />
             <CheckboxControl
-                label= { __( 'Arrows', 'egov' ) }
+                label= { __( 'Arrows', 'mptc' ) }
                 checked={ data_slick.arrows || false }
                 onChange={ 
                     ( boolean ) => {
@@ -53,7 +53,7 @@ const DataSlick = ( { attributes, setAttributes } ) => {
                 }
             />
             <CheckboxControl
-                label= { __( 'Auto Play', 'egov' ) }
+                label= { __( 'Auto Play', 'mptc' ) }
                 checked={ data_slick.autoplay || false }
                 onChange={ 
                     ( boolean ) => {
@@ -69,7 +69,7 @@ const DataSlick = ( { attributes, setAttributes } ) => {
                 }
             />
             <NumberControl
-                label={ __( 'Auto Play Speed (ms)', 'egov' ) }
+                label={ __( 'Auto Play Speed (ms)', 'mptc' ) }
                 isShiftStepEnabled={ true }
                 shiftStep={ 1000 }                
                 value={ data_slick.autoplaySpeed || 0 }
@@ -89,7 +89,7 @@ const DataSlick = ( { attributes, setAttributes } ) => {
             />
             <br/>
             <NumberControl
-                label={ __( 'Slide To Show', 'egov' ) }                
+                label={ __( 'Slide To Show', 'mptc' ) }                
                 value={ data_slick.slidesToShow || 1 }
                 min={ 1 }
                 max={ 12 }
@@ -108,9 +108,9 @@ const DataSlick = ( { attributes, setAttributes } ) => {
                 }
             />
             <br/>
-            <label className={ 'label-section' }>{ __( 'Screen < 992', 'egov' ) }</label>
+            <label className={ 'label-section' }>{ __( 'Screen < 992', 'mptc' ) }</label>
             <NumberControl
-                label={ __( 'Slide To Show', 'egov' ) }                
+                label={ __( 'Slide To Show', 'mptc' ) }                
                 value={ data_slick_md.hasOwnProperty( 'settings' ) ? ( data_slick_md.settings.slidesToShow || 0 ) : 0 }
                 min={ 0 }
                 max={ 12 }
@@ -138,7 +138,7 @@ const DataSlick = ( { attributes, setAttributes } ) => {
             />
             <br/>
             <CheckboxControl
-                label= { __( 'Dots', 'egov' ) }
+                label= { __( 'Dots', 'mptc' ) }
                 checked={ data_slick_md.settings ? ( data_slick_md.settings.dots || false ) : false }
                 disabled ={ data_slick_md.settings ? ( data_slick_md.settings.slidesToShow ? false : true ) : true }
                 onChange={ 
@@ -156,7 +156,7 @@ const DataSlick = ( { attributes, setAttributes } ) => {
                 }
             />
             <CheckboxControl
-                label= { __( 'Arrows', 'egov' ) }
+                label= { __( 'Arrows', 'mptc' ) }
                 checked={ data_slick_md.settings ? ( data_slick_md.settings.arrows || false ) : false }
                 disabled ={ data_slick_md.settings ? ( data_slick_md.settings.slidesToShow ? false : true ) : true }
                 onChange={ 
@@ -174,9 +174,9 @@ const DataSlick = ( { attributes, setAttributes } ) => {
                 }
             />
             <br/>
-            <label className={ 'label-section' }>{ __( 'Screen < 768', 'egov' ) }</label>
+            <label className={ 'label-section' }>{ __( 'Screen < 768', 'mptc' ) }</label>
             <NumberControl
-                label={ __( 'Slide To Show', 'egov' ) }                
+                label={ __( 'Slide To Show', 'mptc' ) }                
                 value={ data_slick_sm.hasOwnProperty( 'settings' ) ? ( data_slick_sm.settings.slidesToShow || 0 ) : 0 }
                 min={ 0 }
                 max={ 12 }
@@ -204,7 +204,7 @@ const DataSlick = ( { attributes, setAttributes } ) => {
             />
             <br/>
             <CheckboxControl
-                label= { __( 'Dots', 'egov' ) }
+                label= { __( 'Dots', 'mptc' ) }
                 checked={ data_slick_sm.settings ? ( data_slick_sm.settings.dots || false ) : false }
                 disabled ={ data_slick_sm.settings ? ( data_slick_sm.settings.slidesToShow ? false : true ) : true }
                 onChange={ 
@@ -222,7 +222,7 @@ const DataSlick = ( { attributes, setAttributes } ) => {
                 }
             />
             <CheckboxControl
-                label= { __( 'Arrows', 'egov' ) }
+                label= { __( 'Arrows', 'mptc' ) }
                 checked={ data_slick_sm.settings ? ( data_slick_sm.settings.arrows || false ) : false }
                 disabled ={ data_slick_sm.settings ? ( data_slick_sm.settings.slidesToShow ? false : true ) : true }
                 onChange={ 
@@ -240,9 +240,9 @@ const DataSlick = ( { attributes, setAttributes } ) => {
                 }
             />
             <br/>
-            <label className={ 'label-section' }>{ __( 'Screen < 576', 'egov' ) }</label>
+            <label className={ 'label-section' }>{ __( 'Screen < 576', 'mptc' ) }</label>
             <NumberControl
-                label={ __( 'Slide To Show', 'egov' ) }                
+                label={ __( 'Slide To Show', 'mptc' ) }                
                 value={ data_slick_xs.hasOwnProperty( 'settings' ) ? ( data_slick_xs.settings.slidesToShow || 0 ) : 0 }
                 min={ 0 }
                 max={ 12 }
@@ -270,7 +270,7 @@ const DataSlick = ( { attributes, setAttributes } ) => {
             />
             <br/>
             <CheckboxControl
-                label= { __( 'Dots', 'egov' ) }
+                label= { __( 'Dots', 'mptc' ) }
                 checked={ data_slick_xs.settings ? ( data_slick_xs.settings.dots || false ) : false }
                 disabled ={ data_slick_xs.settings ? ( data_slick_xs.settings.slidesToShow ? false : true ) : true }
                 onChange={ 
@@ -288,7 +288,7 @@ const DataSlick = ( { attributes, setAttributes } ) => {
                 }
             />
             <CheckboxControl
-                label= { __( 'Arrows', 'egov' ) }
+                label= { __( 'Arrows', 'mptc' ) }
                 checked={ data_slick_xs.settings ? ( data_slick_xs.settings.arrows || false ) : false }
                 disabled ={ data_slick_xs.settings ? ( data_slick_xs.settings.slidesToShow ? false : true ) : true }
                 onChange={ 

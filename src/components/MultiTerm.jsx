@@ -18,7 +18,7 @@ const MultiTerm = ( { attributes, setAttributes } ) => {
         } ).then( data => {
             let type = [ 
                 {
-                    label: __( 'Select a Post Type', 'egov' ),
+                    label: __( 'Select a Post Type', 'mptc' ),
                     value: ''
                 } 
             ]
@@ -104,7 +104,7 @@ const MultiTerm = ( { attributes, setAttributes } ) => {
     return (
         <div>
             <SelectControl
-                label={ __( 'Post Type', 'egov' ) }
+                label={ __( 'Post Type', 'mptc' ) }
                 value={ post_type_selected }
                 options={ post_type }
                 onChange={ ( option ) => { 
@@ -119,7 +119,7 @@ const MultiTerm = ( { attributes, setAttributes } ) => {
             />
             { !! post_type_selected &&
                 <SelectControl
-                    label={ __( 'Taxonomy', 'egov' ) }
+                    label={ __( 'Taxonomy', 'mptc' ) }
                     value={ taxonomy_selected }
                     options={ taxonomy }
                     onChange={ ( option ) => {
@@ -134,7 +134,7 @@ const MultiTerm = ( { attributes, setAttributes } ) => {
             { !! taxonomy_selected &&
                 <SelectControl
                     multiple
-                    label={ __( 'Select Term', 'egov' ) }
+                    label={ __( 'Select Term', 'mptc' ) }
                     value={ term_selected }
                     options={ term }
                     onChange={ ( option ) => {

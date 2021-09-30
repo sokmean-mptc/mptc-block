@@ -8,7 +8,7 @@ import MultiMediaUpload from '../components/MultiMediaUpload.jsx'
 import Gallery from 'react-photo-gallery'
 
 registerBlockType( 'mptc-block/react-gallery', {
-	title: __( 'React Gallery', 'egov' ),
+	title: __( 'React Gallery', 'mptc' ),
 	icon: 'admin-page',
 	category: 'mptc-block', 
 	attributes: {
@@ -59,7 +59,7 @@ registerBlockType( 'mptc-block/react-gallery', {
 						/>
 					</PanelBody>
 					<PanelBody 
-						title={ __( 'General Option', 'egov' ) } 
+						title={ __( 'General Option', 'mptc' ) } 
 						initialOpen={ toggle_panel }
 						onToggle={ () => {
 							setAttributes( { toggle_panel: ! toggle_panel } ) 
@@ -67,11 +67,11 @@ registerBlockType( 'mptc-block/react-gallery', {
 					>
 
 						<SelectControl
-							label={ __( 'Gallery Style', 'egov' ) }
+							label={ __( 'Gallery Style', 'mptc' ) }
 							value={ direction }
 							options={ [
-								{ value: 'row', label: __( 'Row', 'egov' ) },
-								{ value: 'column', label: __( 'Column', 'egov' ) }
+								{ value: 'row', label: __( 'Row', 'mptc' ) },
+								{ value: 'column', label: __( 'Column', 'mptc' ) }
 							] }
 							onChange={ ( value ) => { setAttributes( { direction: value } ) } }
 						/>
