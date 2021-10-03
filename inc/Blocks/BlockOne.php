@@ -203,7 +203,7 @@ class BlockOne extends BaseController
                                 <?php if( $attr['enable_thumbnail'] ) : ?>
                                     <div class="col thumbnail mb-1 mb-sm-2 mb-lg-3">
                                         <a href="<?php the_permalink() ?>">
-                                            <div class="ratio <?php echo $attr['aspectratio_xs'].' '.$attr['aspectratio_sm'].' '.$attr['aspectratio_md'].' '.$attr['aspectratio_lg'].' '.$attr['aspectratio_xl'] ?>">
+                                            <div class="bg-gray-100 ratio <?php echo $attr['aspectratio_xs'].' '.$attr['aspectratio_sm'].' '.$attr['aspectratio_md'].' '.$attr['aspectratio_lg'].' '.$attr['aspectratio_xl'] ?>">
                                                 <div style="background-image: url('<?php the_post_thumbnail_url( $attr['thumbnail_size'] ) ?>');"></div>
                                             </div>
                                         </a>
@@ -255,7 +255,7 @@ class BlockOne extends BaseController
                             <?php if( $attr['enable_thumbnail'] ) : ?>
                                 <div class="col-4 thumbnail">
                                     <a href="<?php the_permalink() ?>">
-                                        <div class="ratio <?php echo $attr['aspectratio_xs'].' '.$attr['aspectratio_sm'].' '.$attr['aspectratio_md'].' '.$attr['aspectratio_lg'].' '.$attr['aspectratio_xl'] ?>">
+                                        <div class="bg-gray-100 ratio <?php echo $attr['aspectratio_xs'].' '.$attr['aspectratio_sm'].' '.$attr['aspectratio_md'].' '.$attr['aspectratio_lg'].' '.$attr['aspectratio_xl'] ?>">
                                             <div style="background-image: url('<?php the_post_thumbnail_url( $attr['thumbnail_size'] ) ?>');"></div>
                                         </div>
                                     </a>

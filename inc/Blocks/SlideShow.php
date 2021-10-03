@@ -225,7 +225,7 @@ class SlideShow extends BaseController
                     <div class="d-block">
                         <figure class="row g-0 mb-0 position-relative">
                             <div class="col-lg-7 thumbnail">
-                                <div class="ratio <?php echo $attr['aspectratio_xs'].' '.$attr['aspectratio_sm'].' '.$attr['aspectratio_md'].' '.$attr['aspectratio_lg'].' '.$attr['aspectratio_xl'] ?>">
+                                <div class="bg-gray-100 ratio <?php echo $attr['aspectratio_xs'].' '.$attr['aspectratio_sm'].' '.$attr['aspectratio_md'].' '.$attr['aspectratio_lg'].' '.$attr['aspectratio_xl'] ?>">
                                     <div style="background-image: url(<?php the_post_thumbnail_url( $attr['thumbnail_size'] ) ?>);"></div>
                                 </div>
                             </div>

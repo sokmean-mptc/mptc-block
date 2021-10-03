@@ -41,6 +41,30 @@ class NusFooter extends BaseController
                     'inner_block' => array(
                         'type' => 'string',
                         'default' => ''
+                    ),
+                    'menu_name' => array(
+                        'type' => 'string',
+                        'default' => ''
+                    ),
+                    'menu_location' => array(
+                        'type' => 'string',
+                        'default' => ''
+                    ),
+                    'menu_container' => array(
+                        'type' => 'string',
+                        'default' => 'ul'
+                    ),
+                    'menu2_name' => array(
+                        'type' => 'string',
+                        'default' => ''
+                    ),
+                    'menu2_location' => array(
+                        'type' => 'string',
+                        'default' => ''
+                    ),
+                    'menu2_container' => array(
+                        'type' => 'string',
+                        'default' => 'ul'
                     )
                 )
             )
@@ -70,12 +94,13 @@ class NusFooter extends BaseController
                         <div class="nus-social-nav d-flex justify-content-center">
                             <nav>
                                 <?php
-                                    if ( has_nav_menu( 'social_menu' ) ) :
+                                    if ( ! empty( $attr['menu_location'] ) && has_nav_menu( $attr['menu_location'] ) ) :
                                         
                                         wp_nav_menu( 
                                             [
-                                            'theme_location' => 'social_menu',
-                                            'container' => 'ul',
+                                            'menu' => $attr['menu_name'],
+                                            'theme_location' => $attr['menu_location'],
+                                            'container' => $attr['menu_container'],
                                             'menu_class' => false
                                             ]
                                         );
@@ -94,11 +119,12 @@ class NusFooter extends BaseController
                             <div class="nus-footer-nav d-flex align-items-baseline justify-content-center">
                                 <nav class="nus-nav">
                                     <?php
-                                    if ( has_nav_menu( 'footer_menu' ) ) :
+                                    if ( ! empty( $attr['menu2_location'] ) && has_nav_menu( $attr['menu2_location'] ) ) :
                                         wp_nav_menu( 
                                             [
-                                                'theme_location' => 'footer_menu',
-                                                'container' => 'ul',
+                                                'menu' => $attr['menu2_name'],
+                                                'theme_location' => $attr['menu2_location'],
+                                                'container' => $attr['menu2_container'],
                                                 'menu_class' => false
                                 
                                             ]

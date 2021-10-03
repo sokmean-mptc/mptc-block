@@ -1,7 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 
-.wp-block {
-    max-width: 1024px;
+.wp-block, .blocks-widgets-container .editor-styles-wrapper {
+    max-width: 1024px!important;
 }
 .wp-core-ui {
     select {

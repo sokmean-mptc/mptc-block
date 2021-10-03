@@ -30,8 +30,8 @@ final class Init
             Blocks\ExchangeRate::class,
             Blocks\NusFooterItem::class,
             Blocks\NusFooter::class,
-            Blocks\GetPost::class,
-            Blocks\LanguageSwitcher::class
+            Blocks\Footer::class,
+            Blocks\Header::class
         ];
     }
 

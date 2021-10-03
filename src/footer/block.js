@@ -1,24 +1,18 @@
 const { registerBlockType } = wp.blocks
-const { InspectorControls, InnerBlocks } = wp.blockEditor
+const { InspectorControls } = wp.blockEditor
 const { PanelBody, TextControl, TextareaControl } = wp.components
 const { Fragment, RawHTML } = wp.element
 const { withDispatch } = wp.data
 
-const ALLOWED_BLOCKS = [ 'mptc-block/nus-footer-item' ]
-
-registerBlockType( 'mptc-block/nus-footer', {
-	title: 'NUS Footer',
+registerBlockType( 'mptc-block/footer', {
+	title: 'Footer',
 	icon: 'admin-page',
 	category: 'mptc-block',
-	keywords: [ 'nus footer' ],
+	keywords: [ 'footer' ],
 	attributes: {
 		toggle_panel: {
 			type: 'boolean',
 			default: true
-		},
-		title: {
-            type: 'string',
-			default: 'Title'
 		},
 		copyright: {
             type: 'string',
@@ -64,7 +58,6 @@ registerBlockType( 'mptc-block/nus-footer', {
 	edit: ( { attributes, setAttributes } ) => {
 		const {
 			toggle_panel,
-			title,
 			copyright,
 			menu,
 			menu_location,
@@ -110,7 +103,7 @@ registerBlockType( 'mptc-block/nus-footer', {
 		}
 		
 		wp.apiFetch ( {
-			url: "/wp-json/mptc-block/language-switcher"
+			url: "/wp-json/mptc-block/language-switcher-v2"
 		} )
 		.then(
 			( data ) => {
@@ -122,7 +115,7 @@ registerBlockType( 'mptc-block/nus-footer', {
 				setAttributes( { language: '' } )
 			}
 		)
-		
+
 		return (
 			<Fragment>
 				<InspectorControls>
@@ -133,11 +126,6 @@ registerBlockType( 'mptc-block/nus-footer', {
 							setAttributes( { toggle_panel: ! toggle_panel } ) 
 						} }
 					>		
-						<TextControl
-							label= { 'Title' }
-							value={ title }
-							onChange={ ( value ) => setAttributes( { title: value } ) }
-						/>		
 						<TextareaControl
 							label= { 'Copyright' }
 							value={ copyright }
@@ -175,54 +163,30 @@ registerBlockType( 'mptc-block/nus-footer', {
 						/>	
 					</PanelBody>
 				</InspectorControls>
-					
-				<footer className={"nus-footer bg-primary text-white"}>
-					<div className={"container"}>
-						<div className={"row"}>
-							<div className={"text-center nus-info-wraper"}>
-								<div className={"nus-contact-info"}>
-									<h3 className={"title"}><RawHTML>{title}</RawHTML></h3>
-									<div className={"d-flex justify-content-center"}>
-										<ul className={"nus-contact-us"}>
-											<InnerBlocks 
-												allowedBlocks={ ALLOWED_BLOCKS } 
-											/>
-										</ul>
-									</div>
-								</div>
-								<div className={"nus-social-nav d-flex justify-content-center"}>
-									<nav>
-										<RawHTML>{menu}</RawHTML>
-									</nav>
-								</div>
+				
+				<div className="bg-gray-100">
+					<footer className="container">
+						<div className="d-sm-flex justify-content-sm-between align-items-center p-2 p-sm-2 p-md-3">
+							<div className="d-flex justify-content-center justify-content-sm-start">
+								<nav className="social-nav">
+									<RawHTML>{menu}</RawHTML>
+								</nav>
+								<RawHTML>{language}</RawHTML>
 							</div>
+							<nav className="footer-nav d-flex justify-content-center justify-content-sm-start">
+								<RawHTML>{menu2}</RawHTML>
+							</nav>
 						</div>
-					</div>
-
-					<div className={"nus-copyright"}>
-						<div className={"container"}>
-							<div className={"row text-center"}>
-								<div className={"info"}><RawHTML>{copyright}</RawHTML></div>
-								<div className={"nus-footer-nav d-flex align-items-baseline justify-content-center"}>
-									<nav className={"nus-nav"}>
-										<RawHTML>{menu2}</RawHTML>
-									</nav>
-									<div className={"nus-language"}>
-										<ul>
-											<RawHTML>{language}</RawHTML>
-										</ul>
-									</div>
-								</div>
-							</div>
+						<hr className="color-gray-400 m-0"/>
+						<div className="copyright text-center color-gray-600 p-1 p-sm-2 p-md-3">
+							<RawHTML>{copyright}</RawHTML>
 						</div>
-					</div>
-				</footer>
+					</footer>
+				</div>
 			</Fragment>
 		)
 	},
 	save: () => {
-		return ( 
-			<InnerBlocks.Content /> 
-		)
+		return null
 	}
 } )
