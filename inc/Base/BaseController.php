@@ -27,13 +27,13 @@ class BaseController
 
     public $post_tages;
 
-    public function __construct() {
+    public function __construct() { 
         $this->plugin_name = 'mptc-block';
         $this->text_domain = 'mptc';
         $this->plugin_path = plugin_dir_path( dirname( __FILE__, 2 ) );
         $this->plugin_url = plugin_dir_url( dirname( __FILE__, 2 ) );
         $this->plugin = plugin_basename( dirname( __FILE__, 3 ) );
-        $this->meta_key_view_count = 'post_view_count';
+        $this->meta_key_view_count = apply_filters( 'mptc_post_views_count', 'post_views_count' );
         $this->post_tages = [ 'post_tag' ];
     }
 
@@ -42,7 +42,7 @@ class BaseController
     }
 
     public function getPostView() {
-        return '<i class="icofont-eye-alt"></i> ' . $this->formatKMG( get_post_meta( get_the_ID(), $this->metaKeyPostViewCount( 'meta_value_num' ), true ) );
+        return '<i class="icofont-eye-alt"></i> ' . $this->formatKMG( get_post_meta( get_the_ID(), $this->meta_key_view_count, true ) );
     }
 
     public function getAuthorPostsUrl() {
@@ -96,13 +96,5 @@ class BaseController
                 $value = $number;
         }
         return $value;
-    }
-
-    public function metaKeyPostViewCount( string $meta_value_num ) {
-        $meta_key = apply_filters( 'egov_meta_value_num', $this->meta_key_view_count );
-        if( $meta_value_num === 'meta_value_num' ) {
-            return $meta_key;
-        }
-        return false;
     }
 }

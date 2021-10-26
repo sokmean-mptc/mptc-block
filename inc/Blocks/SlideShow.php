@@ -135,6 +135,10 @@ class SlideShow extends BaseController
                         'type' => 'boolean',
                         'default' => true
                     ),
+                    'style' => array(
+                        'type' => 'string',
+                        'default' => '1'
+                    ),
                     'aspectratio_xs' => array(
                         'type' => 'string',
                         'default' => 'ratio-16x9'
@@ -223,14 +227,14 @@ class SlideShow extends BaseController
                     $the_query->the_post();
                     ?>
                     <div class="d-block">
-                        <figure class="row g-0 mb-0 position-relative">
-                            <div class="col-lg-7 thumbnail">
+                        <figure class="<?php if( $attr['style'] == '1' ) { echo 'row'; } ?> g-0 mb-0 position-relative">
+                            <div class="<?php if( $attr['style'] == '1' ) { echo 'col-lg-7'; } ?> thumbnail">
                                 <div class="bg-gray-100 ratio <?php echo $attr['aspectratio_xs'].' '.$attr['aspectratio_sm'].' '.$attr['aspectratio_md'].' '.$attr['aspectratio_lg'].' '.$attr['aspectratio_xl'] ?>">
                                     <div style="background-image: url(<?php the_post_thumbnail_url( $attr['thumbnail_size'] ) ?>);"></div>
                                 </div>
                             </div>
-                            <figcaption class="col bg-gradient d-flex align-items-center">
-                                <div class="caption p-1 p-sm-1 p-md-2 py-lg-0 px-lg-4">
+                            <figcaption class="<?php if( $attr['style'] == '2' ) { echo 'position-absolute bottom-0'; } ?> <?php if( $attr['style'] == '1' ) { echo 'col bg-gradient'; } ?> d-flex align-items-center">
+                                <div class="caption p-1 p-sm-1 p-md-2 p-lg-4">
                                     <?php if( $attr['enable_meta'] && $attr['enable_post_tag'] ) : ?>
 
                                         <?php echo ( $this->getTheTermList( $post->ID, $this->post_tages, '<ul class="taxonomies-list list-unstyled p-0 m-0"><li>', '</li><li>', '</li></ul>' ) ); ?>

@@ -135,6 +135,10 @@ registerBlockType( 'mptc-block/slideshow', {
 			type: 'boolean',
 			default: true
 		},
+		style: {
+			type: 'string',
+			default: '1'
+		},
 		aspectratio_xs: {
 			type: 'string',
 			default: 'ratio-16x9'
@@ -165,7 +169,8 @@ registerBlockType( 'mptc-block/slideshow', {
 			order, 
 			posts_per_page,
 			thumbnail_size,
-			exclude
+			exclude,
+			style
 		} = attributes
 
 		return (
@@ -267,6 +272,13 @@ registerBlockType( 'mptc-block/slideshow', {
 						<MetaOption 
 							attributes={ attributes }
 							setAttributes={ setAttributes }
+						/>
+						<br/>
+						<RadioControl
+							label={ 'SlideShow Style' }
+							selected={ style }
+							options={ [ { label: 'Default', value: '1' }, { label: 'Style 2', value: '2' } ] }
+							onChange={ ( boolean ) => setAttributes( { style: boolean } ) }
 						/>
 					</PanelBody>
 				</InspectorControls>

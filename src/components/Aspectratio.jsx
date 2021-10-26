@@ -46,6 +46,14 @@ const Aspectratio = ( { attributes, setAttributes } ) => {
                     { 
                         label: __( 'Aspectratio 8:1', 'mptc' ), 
                         value: 'ratio-8x1' 
+                    },
+                    { 
+                        label: __( 'Anamorphic', 'mptc' ), 
+                        value: 'ratio-anamorphic' 
+                    },
+                    { 
+                        label: __( 'Panavision', 'mptc' ), 
+                        value: 'ratio-panavision' 
                     }
                 ] }
                 onChange={ ( col ) => { setAttributes( { aspectratio_xs: col } ) } }
@@ -88,6 +96,14 @@ const Aspectratio = ( { attributes, setAttributes } ) => {
                     { 
                         label: __( 'Aspectratio 8:1', 'mptc' ), 
                         value: 'ratio-sm-8x1' 
+                    },
+                    { 
+                        label: __( 'Anamorphic', 'mptc' ), 
+                        value: 'ratio-sm-anamorphic' 
+                    },
+                    { 
+                        label: __( 'Panavision', 'mptc' ), 
+                        value: 'ratio-sm-panavision' 
                     }
                 ] }
                 onChange={ ( col ) => { setAttributes( { aspectratio_sm: col } ) } }
@@ -130,6 +146,14 @@ const Aspectratio = ( { attributes, setAttributes } ) => {
                     { 
                         label: __( 'Aspectratio 8:1', 'mptc' ), 
                         value: 'ratio-md-8x1' 
+                    },
+                    { 
+                        label: __( 'Anamorphic', 'mptc' ), 
+                        value: 'ratio-md-anamorphic' 
+                    },
+                    { 
+                        label: __( 'Panavision', 'mptc' ), 
+                        value: 'ratio-md-panavision' 
                     }
                 ] }
                 onChange={ ( col ) => { setAttributes( { aspectratio_md: col } ) } }
@@ -172,6 +196,14 @@ const Aspectratio = ( { attributes, setAttributes } ) => {
                     { 
                         label: __( 'Aspectratio 8:1', 'mptc' ), 
                         value: 'ratio-lg-8x1' 
+                    },
+                    { 
+                        label: __( 'Anamorphic', 'mptc' ), 
+                        value: 'ratio-lg-anamorphic' 
+                    },
+                    { 
+                        label: __( 'Panavision', 'mptc' ), 
+                        value: 'ratio-lg-panavision' 
                     }
                 ] }
                 onChange={ ( col ) => { setAttributes( { aspectratio_lg: col } ) } }
@@ -214,6 +246,14 @@ const Aspectratio = ( { attributes, setAttributes } ) => {
                     { 
                         label: __( 'Aspectratio 8:1', 'mptc' ), 
                         value: 'ratio-xl-8x1' 
+                    },
+                    { 
+                        label: __( 'Anamorphic', 'mptc' ), 
+                        value: 'ratio-xl-anamorphic' 
+                    },
+                    { 
+                        label: __( 'Panavision', 'mptc' ), 
+                        value: 'ratio-xl-panavision' 
                     }
                 ] }
                 onChange={ ( col ) => { setAttributes( { aspectratio_xl: col } ) } }

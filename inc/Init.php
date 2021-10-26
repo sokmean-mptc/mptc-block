@@ -31,7 +31,8 @@ final class Init
             Blocks\NusFooterItem::class,
             Blocks\NusFooter::class,
             Blocks\Footer::class,
-            Blocks\Header::class
+            Blocks\Header::class,
+            Blocks\CPPHeader::class
         ];
     }
 
