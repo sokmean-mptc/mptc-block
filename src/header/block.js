@@ -67,23 +67,23 @@ registerBlockType( 'mptc-block/header', {
 			default: ''
 		},
 		xl: {
-			type: 'number',
+			type: 'string',
 			default: 650
 		},
 		lg: {
-			type: 'number',
+			type: 'string',
 			default: 620
 		},
 		md: {
-			type: 'number',
+			type: 'string',
 			default: 600
 		},
 		sm: {
-			type: 'number',
+			type: 'string',
 			default: 450
 		},
 		xs: {
-			type: 'number',
+			type: 'string',
 			default: 300
 		}
 	},
