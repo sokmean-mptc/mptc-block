@@ -5,7 +5,7 @@
  * Description: A WordPress gutenberg plugin.
  * Author: sokmean-mptc
  * Author URI: https://sokmean.com/
- * Version: 0.0.1
+ * Version: 1.0.0
  * Text Domain: mptc
  * Domain Path: /languages
  * License: GPL2+
