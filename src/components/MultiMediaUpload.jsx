@@ -1,11 +1,13 @@
 const { __ } = wp.i18n;
 const { MediaUploadCheck, MediaUpload } = wp.blockEditor
-const { Button } = wp.components
+const { Button, SelectControl } = wp.components
 
 const MultiMediaUpload = ( { attributes, setAttributes } ) => {
-    const { media_uploader } = attributes
+    const { media_uploader, media_sizes, media_sizes_selected } = attributes
     // console.log(media_uploader.length)
     // console.log(media_uploader)
+    // console.log(media_sizes)
+    // console.log(media_sizes_selected)
     let id = []
     media_uploader.forEach( media => {
         id.push( media.id )
@@ -47,7 +49,7 @@ const MultiMediaUpload = ( { attributes, setAttributes } ) => {
                         </Button>
                         {
                             !! media_uploader.length &&
-                            <Button 
+                            [<Button 
                                 onClick={ () => {
                                     setAttributes( { media_uploader: [] } )
                                 } }
@@ -55,7 +57,13 @@ const MultiMediaUpload = ( { attributes, setAttributes } ) => {
                                 isDestructive 
                             >
                                 { __( 'Remove Gallery', 'mptc' ) }
-                            </Button>
+                            </Button>,
+                            <SelectControl
+                                label="Image Size"
+                                value={ media_sizes_selected }
+                                options={ media_sizes }
+                                onChange={ ( value ) => { setAttributes( { media_sizes_selected: value } ) } }
+                            />]
                         }
                     </div>
                 ) }

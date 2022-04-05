@@ -24,24 +24,40 @@ registerBlockType( 'mptc-block/react-gallery', {
 			type: 'array',
 			default: []
 		},
+        media_sizes: {
+			type: 'array',
+			default: [
+                {label: 'Thumbnail', value: 'thumbnail'},
+                {label: 'Medium', value: 'medium'},
+                {label: 'Large', value: 'large'},
+                {label: 'Full', value: 'full'}
+            ]
+		},
+		media_sizes_selected: {
+			type: 'string',
+			default: 'medium'
+		},
 		direction: {
 			type: 'string',
 			default: 'row'
 		}
 	},
 	edit: ( { attributes, setAttributes } ) => {
-		const { mark_text, media_uploader, direction, toggle_panel } = attributes
-		
+		const { mark_text, media_uploader, direction, toggle_panel, media_sizes_selected } = attributes
 		let photos = []
+		// console.log(photos)
 		if ( media_uploader.length ) {
 			for ( const photo of media_uploader ) {
-				photos.push(
-					{
-						src: photo.sizes.full.url,
-						width: photo.sizes.full.width,
-						height:photo.sizes.full.height
-					}
-				)
+                if(photo.sizes.hasOwnProperty(media_sizes_selected)){
+                    photos.push(
+                        {
+                            src: photo.sizes[media_sizes_selected].url,
+                            width: photo.sizes[media_sizes_selected].width,
+                            height:photo.sizes[media_sizes_selected].height,
+                            key: photo.id+''
+                        }
+                    )
+                }
 			}
 		}
 
@@ -84,7 +100,6 @@ registerBlockType( 'mptc-block/react-gallery', {
 						{ mark_text }						
 					</small>
 					{!! photos.length &&
-					<br/>,
 					<Gallery 
 						direction={ direction }
 						photos={ photos } 
@@ -95,17 +110,20 @@ registerBlockType( 'mptc-block/react-gallery', {
 	},
 	
 	save: ( { attributes } ) => { 
-		const { media_uploader, direction } = attributes
+		const { media_uploader, direction, media_sizes_selected } = attributes
 		let photos = []
 		if ( media_uploader.length ) {
 			for ( const photo of media_uploader ) {
-				photos.push(
-					{
-						src: photo.sizes.full.url,
-						width: photo.sizes.full.width,
-						height:photo.sizes.full.height
-					}
-				)
+				if(photo.sizes.hasOwnProperty(media_sizes_selected)){
+                    photos.push(
+                        {
+                            src: photo.sizes[media_sizes_selected].url,
+                            key: photo.id+'',
+                            width: photo.sizes[media_sizes_selected].width,
+                            height:photo.sizes[media_sizes_selected].height
+                        }
+                    )
+                }
 			}
 		}
 		return (
